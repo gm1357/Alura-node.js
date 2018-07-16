@@ -1,0 +1,14 @@
+{
+  "name": "node-alura",
+  "version": "1.0.0",
+  "description": "Projeto da casadecogido feito pelo tuturial da alura",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Machado",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

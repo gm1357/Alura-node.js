@@ -2,7 +2,7 @@ express = require('express');
 load = require('express-load')
 bodyParser = require('body-parser');
 methodOverride = require('method-override')
-
+expressValidator = require('express-validator');
 
 module.exports = function() {
     app = express();
@@ -13,6 +13,7 @@ module.exports = function() {
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
     app.use(methodOverride('_method'));
+    app.use(expressValidator());
 
     load('routes', {cwd: 'app'})
         .then('infra')

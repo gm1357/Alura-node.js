@@ -15,6 +15,7 @@
                 <th>titulo</th>
                 <th>descricao</th>
                 <th>preco</th>
+                <th>Remover</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,12 @@
                 <td><%=lista[i].titulo%></td>
                 <td><%=lista[i].descricao%></td>
                 <td><%=lista[i].preco%></td>
+                <td>
+                    <form method="POST" action="/produtos?_method=DELETE">
+                        <input type="hidden" name="produto_id" value="<%=lista[i].id%>">
+                        <input type="submit" value="&times;"/>
+                    </form>
+                </td>
             </tr>
         <%}%>
         </tbody>

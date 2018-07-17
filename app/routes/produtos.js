@@ -26,4 +26,17 @@ module.exports = function(app) {
 
         connection.end();
     });
+
+    app.delete("/produtos", function (req, res) {
+        produto_id = req.body.produto_id;
+
+        connection = app.infra.connectionFactory();
+        produtosDAO = new app.infra.ProdutosDAO(connection);
+
+        produtosDAO.deleta(produto_id, function(err, results){
+            res.redirect('/produtos');
+        });
+
+        connection.end();
+    });
 }
